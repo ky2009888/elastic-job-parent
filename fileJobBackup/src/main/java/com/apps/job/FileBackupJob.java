@@ -73,7 +73,7 @@ public class FileBackupJob implements SimpleJob {
         for(FileCustom file : files){
             //标记文件数据为已备份
             file.setBackedUp(Boolean.TRUE);
-            log.info("已备份文件: {} 型: {}",file.getName(),file.getType());
+            log.info("已备份文件: {}:{} 型: {}",file.getId(),file.getName(),file.getType());
         }
     }
 }
