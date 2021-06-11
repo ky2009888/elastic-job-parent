@@ -41,7 +41,11 @@ public class BackupFilesJopMain {
         startJob(registryCenter);
     }
 
-    //注册中心配置
+    /**
+     * 配置并启动任务.
+     *
+     * @return
+     */
     private static CoordinatorRegistryCenter setUpRegistryCenter() {
         //注册中心配置
         ZookeeperConfiguration zookeeperConfiguration = new
@@ -55,11 +59,15 @@ public class BackupFilesJopMain {
         return registryCenter;
     }
 
-    //配置并启动任务
+    /**
+     * 配置并启动任务
+     *
+     * @param registryCenter
+     */
     private static void startJob(CoordinatorRegistryCenter registryCenter) {
         //创建JobCoreConfiguration
         JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("files‐job",
-                "0/3 * * * * ?", 1)
+                "0/3 * * * * ?", 2)
                 .build();
         //创建SimpleJobConfiguration
         SimpleJobConfiguration simpleJobConfiguration = new
